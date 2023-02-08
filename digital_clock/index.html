@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="all-cntnr">
+    <img src="./clock_logo.png" alt="clock" id="clk-lgo">
+    <div class="dg-clk">
+        <div class="box tm">
+            <p>TIME</p>
+        </div>
+        <div class="box hr">
+            <p class="num">10</p>
+            <p class="txt">hours</p>
+        </div>
+        <div class="box min">
+            <p class="num">00</p>
+            <p class="txt">mins</p>
+        </div>
+        <div class="box sec">
+            <p class="num">01</p>
+            <p class="txt">secs</p>
+        </div>
+        <div class="box ampm">
+            <p>AM</p>
+        </div>
+        <div class="dotbox d1">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="dotbox d2">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="bckbx1"></div>
+    <div class="bckbx2"></div>
+    <div class="alarm-cntnr">
+        <div class="alm">
+            <img src="./wake_up.svg">
+            <label for="timeAll">Set wake up time</label>
+            <select id="timeAll">
+                <option>10 AM-11 AM</option>
+                <option>8 AM-9 AM</option>
+                <option>9 AM-10 AM</option>
+                <option>10 AM-11 AM</option>
+                <option>11 AM-12 PM</option>
+            </select>
+        </div>
+        <div class="alm">
+            <img src="./lunch_time.svg">
+            <label for="timeLunch">Set lunch time</label>
+            <select id="timeLunch">
+                <option>12 PM-1 PM</option>
+            </select>
+        </div>
+        <div class="alm">
+            <img src="./nap_time.svg">
+            <label for="timeNap">Set nap time</label>
+            <select id="timeNap">
+                <option>4 PM-5 PM</option>
+            </select>
+        </div>
+        <div class="alm">
+            <img src="./night.png" width="40px">
+            <label for="timeNight">Set night time</label>
+            <select id="timeNight">
+                <option>4 PM-5 PM</option>
+            </select>
+        </div>
+    </div>
+    <div class="cmnt">
+        <p>GRAB SOME HEALTHY BREAKFAST!!!</p>
+    </div>
+    <div class="img-cntnr"></div>
+    <div class="wish-cmnt">
+        <p>GOOD MORNING!! WAKE UP !!</p>
+    </div>
+    <div class="alm-btn">
+        <p>Set Alarm</p>
+    </div>
+    <div class="tm-dscrptn">
+        <p>Wake Up Time: 10AM - 11AM</p>
+        <p>Lunch Time: 12PM - 1PM</p>
+        <p>Nap Time: 4PM - 5PM</p>
+        <p>Night Time: 8PM - 9AM</p>
+    </div>
+</div>
+</body>
+</html>
