@@ -175,7 +175,7 @@
     background-image: url(sandClock.jpg);
     background-color: bisque;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .wish-cmnt{
