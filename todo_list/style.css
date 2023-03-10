@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.master{
+    width: 1300px;
+    height: 1000px;
+    background-color: black;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+.heading{
+    position: relative;
+    top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.heading h1{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+}
+.heading h1 span{
+    font-family: 'Poiret One', cursive;
+    font-weight: lighter;
+}
+#addFormBtn{
+    border: none;
+    background: local;
+    font-family: 'Poiret One', cursive;
+    font-weight: lighter;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+#plusIcon{
+    background: none;
+    color: aqua;
+    font-size: 35px;
+}
+#plusIcon:hover{
+    font-size: 38px;
+    color: yellowgreen;
+}
+#cardCntnr{
+    position: relative;
+    top: 80px;
+    left: 100px;
+    width: 1100px;
+    height: 800px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#cardCntnr h1{
+    color: white;
+    font-family: 'Poiret One', cursive;
+    font-weight: lighter;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.addListForm{
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid yellowgreen;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    visibility: hidden;
+}
+.addListForm h2{
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(175, 84, 9);
+}
+#newList{
+    width: 300px;
+    height: 45px;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+.btnCntnr{
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#addBtn, #clsBtn {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    background-color: rgb(175, 84, 9);
+    border: none;
+    cursor: pointer;
+}
+#addBtn:hover, #clsBtn:hover {
+    width: 105px;
+    height: 42px;
+    background-color: rgb(231, 113, 17);
+    box-shadow: inset -3px -3px 5px gray;
+}
+.cardDiv{
+    position: relative;
+    background-color: white;
+    width: 225px;
+    height: 300px;
+    border-radius: 15px;
+    text-align: center;
+}
+.cardDiv h3{
+    font-size: 22px;
+    padding: 15px;
+    color: rgb(8, 115, 238);
+}
+.cardBtnDiv{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: 100px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#addIcon{
+    background-color: aqua;
+    color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+}
+#delIcon{
+    background-color: orangered;
+    color: white;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    padding: 2.5px;
+    cursor: pointer;
+}
+.addItemForm{
+    position: fixed;
+    top: 300px;
+    left: 500px;
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid yellowgreen;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    visibility: hidden;
+}
+.addItemForm h2{
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(10, 70, 236);
+}
+#newItem{
+    width: 300px;
+    height: 45px;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+.itemBtns{
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#itemAddBtn, #itemClsBtn {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    background-color: rgb(42, 93, 233);
+    border: none;
+    cursor: pointer;
+}
+#itemAddBtn:hover, #itemClsBtn:hover{
+    width: 105px;
+    height: 42px;
+    background-color: rgb(10, 70, 236);
+    box-shadow: 3px 3px 3px gray;
+}
+.markBtn{
+    width: 75px;
+    height: 25px;
+    color: white;
+    background-color: rgb(182, 121, 238);
+    border-radius: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.listCntnr{
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    list-style-type: none;
+}
+.listCntnr li{
+    margin-top: 5px;
+}
+#back{
+    background: none;
+    color: rgb(17, 107, 209);
+    font-size: 40px;
+    cursor: pointer;
+}
