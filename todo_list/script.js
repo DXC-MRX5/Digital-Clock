@@ -34,7 +34,6 @@ function createCard(){
     delIcon.id = "delIcon";
     let cardDiv = document.createElement("div");
     cardDiv.className = "cardDiv";
-    cardDiv.id=newList;
     let cardBtnDiv = document.createElement("div");
     cardBtnDiv.className = "cardBtnDiv";
     let line=document.createElement("hr");
@@ -54,6 +53,10 @@ function createCard(){
         display(cards);
     })
     cards.push(cardDiv);
+    for (let i=0;i<cards.length;i++){
+        let title=cards[i].querySelector("h3");
+        title.id=i;
+    }
     display(cards);
 }
 function display(cards){
@@ -66,9 +69,6 @@ function display(cards){
     else{
         for(let i=0;i<cards.length;i++){
             document.querySelector("#cardCntnr").append(cards[i]);
-            // cards.forEach((obj,index)=>{
-            //     obj.id=index;
-            // })
         }
     }
 }
@@ -102,33 +102,50 @@ function hideItemForm(){
     document.querySelector(".master").style.filter = "unset";
 }
 function singleCardShown(event){
+    let singleHeading=document.createElement("h2");
+    singleHeading.innerText = document.querySelector("#newList").value;
+    let back=document.createElement("div");
+    back.id="backDiv";
+    let backText=document.createElement("p");
+    backText.innerText="Back";
+    backText.id="backText";
     let backBtn=document.createElement("span");
     backBtn.className= "material-symbols-outlined";
     backBtn.innerText= "arrow_circle_left";
-    backBtn.id="back";
-    document.querySelector(".heading").append(backBtn);
+    backBtn.id="backBtn";
+    back.append(backBtn,backText);
+    document.querySelector(".heading").append(singleHeading,back);
     document.querySelector(".heading").style.flexDirection="row-reverse";
     document.querySelector(".heading h1").style.display="none";
-    let x=event.target.innerText;
+    document.querySelector("#addFormBtn").innerHTML='<button id="addFormBtn"><span id="plusIcon" class="material-symbols-outlined">add_Circle</span></button>';
+    let x=event.target.id;
+    console.log(x);
     for (let i=0;i<cards.length;i++){
-        if(x !== cards[i].id){
+        if(x !== cards[i].querySelector("h3").id){
             cards[i].style.display="none";
         }
     }
-    backBtn.addEventListener("click",normal);
+    document.querySelector(".cardDiv").style.marginLeft="40%";
+    back.addEventListener("click",normal);
     function normal(){
-        backBtn.style.display="none";
+        back.style.display="none";
+        singleHeading.style.display="none";
+        document.querySelector(".cardDiv").style.marginLeft="";
         document.querySelector(".heading h1").style.display="block";
         document.querySelector(".heading").style.flexDirection="row";
+        document.querySelector("#addFormBtn").innerHTML='<button id="addFormBtn"><span id="plusIcon" class="material-symbols-outlined">add_Circle</span>   Add Item</button>';
         for (let i=0;i<cards.length;i++){
             cards[i].style.display="block";
         }
     }
     document.getElementById("addBtn").addEventListener("click", sameBack);
     function sameBack(){
-        backBtn.style.display="none";
+        back.style.display="none";
+        singleHeading.style.display="none";
+        document.querySelector(".cardDiv").style.marginLeft="";
         document.querySelector(".heading h1").style.display="block";
         document.querySelector(".heading").style.flexDirection="row";
+        document.querySelector("#addFormBtn").innerHTML='<button id="addFormBtn"><span id="plusIcon" class="material-symbols-outlined">add_Circle</span>   Add Item</button>';
         for (let i=0;i<cards.length;i++){
             cards[i].style.display="block";
         }

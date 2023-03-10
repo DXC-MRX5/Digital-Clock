@@ -10,8 +10,8 @@
     width: 1300px;
     height: 1000px;
     background-color: black;
-    margin-left: 60px;
-    margin-top: 60px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 .heading{
     position: relative;
@@ -128,6 +128,7 @@
     font-size: 22px;
     padding: 15px;
     color: rgb(8, 115, 238);
+    cursor: pointer;
 }
 .cardBtnDiv{
     width: 100px;
@@ -224,9 +225,25 @@
 .listCntnr li{
     margin-top: 5px;
 }
-#back{
+#backDiv{
+    width: 105px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+#backBtn{
     background: none;
     color: rgb(17, 107, 209);
     font-size: 40px;
-    cursor: pointer;
+}
+#backText{
+    color: white;
+    font-size: 30px;
+    font-family: 'Poiret One', cursive;
+}
+.heading h2{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
 }
