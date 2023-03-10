@@ -102,6 +102,10 @@ function hideItemForm(){
     document.querySelector(".master").style.filter = "unset";
 }
 function singleCardShown(event){
+    let y1=document.querySelectorAll(".cardDiv");
+    for(let i=0;i<y1.length;i++){
+        y1[i].style.marginLeft="40%";
+    }
     let singleHeading=document.createElement("h2");
     singleHeading.innerText = document.querySelector("#newList").value;
     let back=document.createElement("div");
@@ -125,12 +129,13 @@ function singleCardShown(event){
             cards[i].style.display="none";
         }
     }
-    document.querySelector(".cardDiv").style.marginLeft="40%";
     back.addEventListener("click",normal);
     function normal(){
+        for(let i=0;i<y1.length;i++){
+            y1[i].style.marginLeft="";
+        }
         back.style.display="none";
         singleHeading.style.display="none";
-        document.querySelector(".cardDiv").style.marginLeft="";
         document.querySelector(".heading h1").style.display="block";
         document.querySelector(".heading").style.flexDirection="row";
         document.querySelector("#addFormBtn").innerHTML='<button id="addFormBtn"><span id="plusIcon" class="material-symbols-outlined">add_Circle</span>   Add Item</button>';
@@ -140,9 +145,11 @@ function singleCardShown(event){
     }
     document.getElementById("addBtn").addEventListener("click", sameBack);
     function sameBack(){
+        for(let i=0;i<y1.length;i++){
+            y1[i].style.marginLeft="";
+        }
         back.style.display="none";
         singleHeading.style.display="none";
-        document.querySelector(".cardDiv").style.marginLeft="";
         document.querySelector(".heading h1").style.display="block";
         document.querySelector(".heading").style.flexDirection="row";
         document.querySelector("#addFormBtn").innerHTML='<button id="addFormBtn"><span id="plusIcon" class="material-symbols-outlined">add_Circle</span>   Add Item</button>';
@@ -150,4 +157,5 @@ function singleCardShown(event){
             cards[i].style.display="block";
         }
     }
+    document.removeEventListener("click",singleCardShown);
 }
