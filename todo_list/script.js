@@ -1,7 +1,6 @@
 document.getElementById("addFormBtn").addEventListener("click", showForm);
 document.getElementById("clsBtn").addEventListener("click", hideForm);
 document.getElementById("addBtn").addEventListener("click", createCard);
-document.getElementById("itemClsBtn").addEventListener("click", hideItemForm);
 
 let cards=[];
 
@@ -38,7 +37,7 @@ function createCard(){
     cardBtnDiv.className = "cardBtnDiv";
     let line=document.createElement("hr");
     cardBtnDiv.append(addIcon, delIcon);
-    addIcon.addEventListener("click", ()=>{
+    addIcon.addEventListener("click", function xyz(){
         showItemFrom(listCntnr);
     });
     cardDiv.append(cardTitle, line, listCntnr, cardBtnDiv);
@@ -76,6 +75,12 @@ function display(cards){
 function showItemFrom(tag){
     document.querySelector(".addItemForm").style.visibility="visible";
     document.querySelector(".master").style.filter = "blur(20px)";
+    document.getElementById("itemClsBtn").addEventListener("click", hideItemForm);
+    function hideItemForm(){
+        document.querySelector(".addItemForm").style.visibility="hidden";
+        document.querySelector(".master").style.filter = "unset";
+        document.getElementById("itemAddBtn").removeEventListener("click", createList);
+    }
     document.getElementById("itemAddBtn").addEventListener("click", createList);
     function createList(){
         document.querySelector(".addItemForm").style.visibility="hidden";
@@ -97,10 +102,6 @@ function showItemFrom(tag){
     }
 }
 
-function hideItemForm(){
-    document.querySelector(".addItemForm").style.visibility="hidden";
-    document.querySelector(".master").style.filter = "unset";
-}
 function singleCardShown(event){
     let y1=document.querySelectorAll(".cardDiv");
     for(let i=0;i<y1.length;i++){
