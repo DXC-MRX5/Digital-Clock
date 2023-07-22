@@ -3,6 +3,7 @@ document.getElementById("clsBtn").addEventListener("click", hideForm);
 document.getElementById("addBtn").addEventListener("click", createCard);
 
 let cards=[];
+let screenWidth = window.innerWidth;
 
 function showForm(){
     document.querySelector(".addListForm").style.visibility="visible";
@@ -105,7 +106,10 @@ function showItemFrom(tag){
 function singleCardShown(event){
     let y1=document.querySelectorAll(".cardDiv");
     for(let i=0;i<y1.length;i++){
-        y1[i].style.marginLeft="40%";
+        if(screenWidth <= 500){
+            y1[i].style.marginLeft="auto";
+        }
+        else y1[i].style.marginLeft='35%';
     }
     let singleHeading=document.createElement("h2");
     singleHeading.innerText = document.querySelector("#newList").value;
@@ -124,13 +128,18 @@ function singleCardShown(event){
     document.querySelector(".heading h1").style.display="none";
     document.querySelector("#addFormBtn").innerHTML='<button id="addFormBtn"><span id="plusIcon" class="material-symbols-outlined">add_Circle</span></button>';
     let x=event.target.id;
-    console.log(x);
     for (let i=0;i<cards.length;i++){
         if(x !== cards[i].querySelector("h3").id){
             cards[i].style.display="none";
         }
     }
     back.addEventListener("click",normal);
+    const flexSet = ()=>{
+        if(screenWidth <= 500){
+            return document.querySelector(".heading").style.flexDirection="column";
+        }
+        return document.querySelector(".heading").style.flexDirection="row";
+    }
     function normal(){
         for(let i=0;i<y1.length;i++){
             y1[i].style.marginLeft="";
@@ -138,7 +147,7 @@ function singleCardShown(event){
         back.style.display="none";
         singleHeading.style.display="none";
         document.querySelector(".heading h1").style.display="block";
-        document.querySelector(".heading").style.flexDirection="row";
+        flexSet();
         document.querySelector("#addFormBtn").innerHTML='<button id="addFormBtn"><span id="plusIcon" class="material-symbols-outlined">add_Circle</span>   Add Item</button>';
         for (let i=0;i<cards.length;i++){
             cards[i].style.display="block";
@@ -152,7 +161,7 @@ function singleCardShown(event){
         back.style.display="none";
         singleHeading.style.display="none";
         document.querySelector(".heading h1").style.display="block";
-        document.querySelector(".heading").style.flexDirection="row";
+        flexSet();
         document.querySelector("#addFormBtn").innerHTML='<button id="addFormBtn"><span id="plusIcon" class="material-symbols-outlined">add_Circle</span>   Add Item</button>';
         for (let i=0;i<cards.length;i++){
             cards[i].style.display="block";
